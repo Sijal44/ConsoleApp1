@@ -1,13 +1,14 @@
 ﻿namespace ConsoleApp1
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             // Lägg till ny ansökan
             string Applications = "";
+            var job = new JobApplication("IKEA", "Säljare", DateTime.Now, "Ansökt");
 
-            while (Applications!="7") 
+            while (Applications != "7")
             {
                 Console.WriteLine("<<Välkomen till arbetsförmedlingen>>");
                 Console.WriteLine("<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>");
@@ -18,15 +19,15 @@
                 Console.WriteLine("5.Ta bort en ansökan:");
                 Console.WriteLine("6.Avsluta programmet:");
                 Console.WriteLine("***********************************");
+                Console.ReadKey();
 
                 Applications = Console.ReadLine();
                 Console.Clear();
 
-                switch(Applications)
+                switch (Applications)
                 {
                     case "1":
-                        Console.WriteLine("Företagsnamn: , Tjänst: ,Datum för ansökan:,Status:");
-
+                        Console.WriteLine("Företagsnamn:");
                         break;
                     case "2":
                         Console.WriteLine("Visa alla ansökningar:");
@@ -51,7 +52,8 @@
                 {
                     Console.WriteLine(item);
                 }
-              
+                job.AddJob();
+
             }
         }
     }
