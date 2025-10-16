@@ -5,8 +5,10 @@
         static void Main(string[] args)
         {
             // Lägg till ny ansökan
+            Applications ansökan = new Applications();
             string Applications = "";
-            var job = new JobApplication("IKEA", "Säljare", DateTime.Now, "Ansökt");
+            job.Applications = Applications;
+
 
             while (Applications != "7")
             {
@@ -21,8 +23,8 @@
                 Console.WriteLine("***********************************");
                 Console.ReadKey();
 
+                
                 Applications = Console.ReadLine();
-                Console.Clear();
 
                 switch (Applications)
                 {
@@ -52,7 +54,7 @@
                 {
                     Console.WriteLine(item);
                 }
-                job.AddJob();
+                ansökan.AddJob();
 
             }
         }

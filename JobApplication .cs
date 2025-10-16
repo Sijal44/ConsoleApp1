@@ -8,26 +8,16 @@
         public DateTime ApplicationDate { get; set; }//| DateTime - Datum när ansökan skickades
         public DateTime ResponseDate { get; set; }
         public int SalaryExpectation { get; set; }
-
-
-        public JobApplication(string companyName, string position, DateTime date, string status)
+        
+        
+        public int GetDaysSinceApplied()
         {
-            CompanyName = companyName;
-            PositionTitle = position;
-            ApplicationDate = date;
-            Status = status;
+            TimeSpan difference = DateTime.Now - ApplicationDate;
+            return difference.Days;
         }
-
-        //Här ska vi skapa en metod som lägger till en ansökan
-        public void AddJob()
+        public string GetSummary()
         {
-            Console.WriteLine("Företagsnamn: ");
-            CompanyName = Console.ReadLine();
-            Console.WriteLine("Tjänst: ");
-            PositionTitle = Console.ReadLine();
-            ApplicationDate = DateTime.Now;
-            Console.WriteLine("Status (Applied, Interview, Offer, Rejected): ");
-            Status = Console.ReadLine();
+            return $"{CompanyName} - {PositionTitle} ({Status})";
         }
     }
 }
