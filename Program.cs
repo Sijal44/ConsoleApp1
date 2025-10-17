@@ -12,16 +12,15 @@
 
             while (Applications != "7")
             {
-                Console.WriteLine("<<Välkomen till arbetsförmedlingen>>");
-                Console.WriteLine("<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>");
-                Console.WriteLine("1.Lägg till ny ansökan:");
-                Console.WriteLine("2.Visa alla ansökningar:");
-                Console.WriteLine("3.Visa statistik:");
-                Console.WriteLine("4.Uppdatera status på en ansökan:");
-                Console.WriteLine("5.Ta bort en ansökan:");
-                Console.WriteLine("6.Avsluta programmet:");
-                Console.WriteLine("***********************************");
-                Console.ReadKey();
+                Console.WriteLine("<< Välkommen till Job Application Tracker >>");
+                Console.WriteLine("<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>");
+                Console.WriteLine("1. Lägg till ny ansökan");
+                Console.WriteLine("2. Visa alla ansökningar");
+                Console.WriteLine("3. Uppdatera status på en ansökan");
+                Console.WriteLine("4. Ta bort en ansökan");
+                Console.WriteLine("5. Avsluta programmet");
+                Console.WriteLine("**************************************");
+                Console.Write("Ditt val: ");
 
                 
                 Applications = Console.ReadLine();
