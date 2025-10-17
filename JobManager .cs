@@ -26,29 +26,7 @@
             Console.Write("Status (Applied, Interview, Offer, Rejected): ");
             ansökan.Status = Console.ReadLine();
 
-            // 6️ Valfri: fyll i svarsdagen
-            Console.Write("Svarsdagen (yyyy-MM-dd) - lämna tom om ej svar: ");
-            string svar = Console.ReadLine();
-            if (!string.IsNullOrWhiteSpace(svar) && DateTime.TryParse(svar, out DateTime svarDatum))
-            {
-                ansökan.ResponseDate = svarDatum;
-            }
-            else
-            {
-                ansökan.ResponseDate = null; // om användaren inte skriver något
-            }
-
-            // 7️ Fyll i löneförväntning
-            Console.Write("Löneförväntning (heltal i kr): ");
-            if (int.TryParse(Console.ReadLine(), out int lön))
-            {
-                ansökan.SalaryExpectation = lön;
-            }
-            else
-            {
-                ansökan.SalaryExpectation = 0; // default om ogiltigt värde
-            }
-
+          
             // 8️Lägg objektet i listan
             Applications.Add(ansökan);
 

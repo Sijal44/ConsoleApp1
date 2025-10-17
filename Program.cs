@@ -1,60 +1,49 @@
-﻿namespace ConsoleApp1
+﻿using ConsoleApp1;
+using System;
+
+class Program
 {
-    public class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        JobManager job = new JobManager();
+        string val = "";
+
+        while (val != "6")
         {
-            // Lägg till ny ansökan
-            Applications ansökan = new Applications();
-            string Applications = "";
-            job.Applications = Applications;
+            Console.WriteLine("\n<< Välkommen till arbetsförmedlingen >>");
+            Console.WriteLine("1. Lägg till ny ansökan");
+            Console.WriteLine("2. Visa alla ansökningar");
+            Console.WriteLine("3. Uppdatera status på en ansökan");
+            Console.WriteLine("4. Ta bort en ansökan");
+            Console.WriteLine("5. Visa statistik (VG-del)");
+            Console.WriteLine("6. Avsluta programmet");
+            Console.Write("Ditt val: ");
 
+            val = Console.ReadLine();
 
-            while (Applications != "7")
+            switch (val)
             {
-                Console.WriteLine("<< Välkommen till Job Application Tracker >>");
-                Console.WriteLine("<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>");
-                Console.WriteLine("1. Lägg till ny ansökan");
-                Console.WriteLine("2. Visa alla ansökningar");
-                Console.WriteLine("3. Uppdatera status på en ansökan");
-                Console.WriteLine("4. Ta bort en ansökan");
-                Console.WriteLine("5. Avsluta programmet");
-                Console.WriteLine("**************************************");
-                Console.Write("Ditt val: ");
-
-                
-                Applications = Console.ReadLine();
-
-                switch (Applications)
-                {
-                    case "1":
-                        Console.WriteLine("Företagsnamn:");
-                        break;
-                    case "2":
-                        Console.WriteLine("Visa alla ansökningar:");
-                        break;
-                    case "3":
-                        Console.WriteLine("Visa statistik:");
-                        break;
-                    case "4":
-                        Console.WriteLine("Uppdatera status på en ansökan:");
-                        break;
-                    case "5":
-                        Console.WriteLine("Ta bort en ansökan:");
-                        break;
-                    case "6":
-                        Console.WriteLine("Avsluta programmet:");
-                        break;
-                    default:
-                        Console.WriteLine("Ogiltigt val, försök igen.");
-                        break;
-                }
-                foreach (var item in Applications)
-                {
-                    Console.WriteLine(item);
-                }
-                ansökan.AddJob();
-
+                case "1":
+                    job.AddJob();
+                    break;
+                case "2":
+                    job.ShowAll();
+                    break;
+                case "3":
+                    job.UpdateStatus();
+                    break;
+                case "4":
+                    job.RemoveJob();
+                    break;
+                case "5":
+                    Console.WriteLine("Denna del är VG-nivå.");
+                    break;
+                case "6":
+                    Console.WriteLine("Programmet avslutas...");
+                    break;
+                default:
+                    Console.WriteLine("Ogiltigt val, försök igen.");
+                    break;
             }
         }
     }
