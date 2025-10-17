@@ -10,7 +10,7 @@
         
             while (val != "6")
             {
-                Console.WriteLine("<< Välkommen till min projekt >>");
+                Console.WriteLine("<< Välkommen till Job Application Tracker >>");
                 Console.WriteLine("<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>");
                 Console.WriteLine("1. Lägg till ny ansökan");
                 Console.WriteLine("2. Visa alla ansökningar");
