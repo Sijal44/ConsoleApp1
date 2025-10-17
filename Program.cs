@@ -4,59 +4,55 @@
     {
         static void Main(string[] args)
         {
-            // Lägg till ny ansökan
-            Applications ansökan = new Applications();
-            string Applications = "";
-            job.Applications = Applications;
-
-
-            while (Applications != "7")
+            //här skalpar jag objekt
+            JobManager job = new JobManager();
+            string val = "";
+        
+            while (val != "6")
             {
-                Console.WriteLine("<<Välkomen till arbetsförmedlingen>>");
-                Console.WriteLine("<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>");
-                Console.WriteLine("1.Lägg till ny ansökan:");
-                Console.WriteLine("2.Visa alla ansökningar:");
-                Console.WriteLine("3.Visa statistik:");
-                Console.WriteLine("4.Uppdatera status på en ansökan:");
-                Console.WriteLine("5.Ta bort en ansökan:");
-                Console.WriteLine("6.Avsluta programmet:");
-                Console.WriteLine("***********************************");
-                Console.ReadKey();
+                Console.WriteLine("<< Välkommen till min projekt >>");
+                Console.WriteLine("<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>");
+                Console.WriteLine("1. Lägg till ny ansökan");
+                Console.WriteLine("2. Visa alla ansökningar");
+                Console.WriteLine("3. Uppdatera status på en ansökan");
+                Console.WriteLine("4. Ta bort en ansökan");
+                Console.WriteLine("5. Avsluta programmet");
+                Console.WriteLine("**************************************");
+                Console.Write("Ditt val: ");
 
-                
-                Applications = Console.ReadLine();
+                val = Console.ReadLine();
+                Console.Clear();
 
-                switch (Applications)
+                switch (val)
                 {
                     case "1":
-                        Console.WriteLine("Företagsnamn:");
+                        job.AddJob();
                         break;
                     case "2":
-                        Console.WriteLine("Visa alla ansökningar:");
+                        job.ShowAll();
                         break;
                     case "3":
-                        Console.WriteLine("Visa statistik:");
+                        job.UpdateStatus();
                         break;
                     case "4":
-                        Console.WriteLine("Uppdatera status på en ansökan:");
+                        job.RemoveJob();
                         break;
                     case "5":
-                        Console.WriteLine("Ta bort en ansökan:");
-                        break;
-                    case "6":
-                        Console.WriteLine("Avsluta programmet:");
+                        Console.WriteLine("Programmet avslutas...");
                         break;
                     default:
                         Console.WriteLine("Ogiltigt val, försök igen.");
                         break;
                 }
-                foreach (var item in Applications)
-                {
-                    Console.WriteLine(item);
-                }
-                ansökan.AddJob();
-
             }
         }
     }
 }
+//JobApplication ansökan = new JobApplication();
+
+//string summary = ansökan.GetSummary();
+//Console.WriteLine("Sammanfattning: " + summary);
+
+// Anropa GetDaysSinceApplied
+//int dagar = ansökan.GetDaysSinceApplied();
+//Console.WriteLine("Antal dagar sedan ansökan: " + dagar);
