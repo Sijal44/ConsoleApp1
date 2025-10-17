@@ -2,12 +2,12 @@
 {
     public class JobApplication
     {
-        public string CompanyName { get; set; }
-        public string PositionTitle { get; set; }
-        public string Status { get; set; } //(Applied, Interview, Offer, Rejected)
-        public DateTime ApplicationDate { get; set; }//| DateTime - Datum när ansökan skickades
-        public DateTime ResponseDate { get; set; }
-        public int SalaryExpectation { get; set; }
+        public string CompanyName; 
+        public string PositionTitle;
+        public string Status ;//(Applied, Interview, Offer, Rejected)
+        public DateTime ApplicationDate ;//| DateTime - Datum när ansökan skickades
+        public DateTime ResponseDate ;
+        public int SalaryExpectation ;
         
         
         public int GetDaysSinceApplied()

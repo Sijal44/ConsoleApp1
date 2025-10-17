@@ -10,13 +10,12 @@ class Program
 
         while (val != "6")
         {
-            Console.WriteLine("\n<< Välkommen till arbetsförmedlingen >>");
+            Console.WriteLine("\n<< Welcome to Job Application Tracker >>");
             Console.WriteLine("1. Lägg till ny ansökan");
             Console.WriteLine("2. Visa alla ansökningar");
             Console.WriteLine("3. Uppdatera status på en ansökan");
             Console.WriteLine("4. Ta bort en ansökan");
-            Console.WriteLine("5. Visa statistik (VG-del)");
-            Console.WriteLine("6. Avsluta programmet");
+            Console.WriteLine("5. Avsluta programmet");
             Console.Write("Ditt val: ");
 
             val = Console.ReadLine();
@@ -36,9 +35,6 @@ class Program
                     job.RemoveJob();
                     break;
                 case "5":
-                    Console.WriteLine("Denna del är VG-nivå.");
-                    break;
-                case "6":
                     Console.WriteLine("Programmet avslutas...");
                     break;
                 default:

@@ -27,10 +27,10 @@
             ansökan.Status = Console.ReadLine();
 
           
-            // 8️Lägg objektet i listan
+            // 6Lägg objektet i listan
             Applications.Add(ansökan);
 
-            // 9️ Feedback till användaren
+            // 97 Feedback till användaren
             Console.WriteLine("Ansökan tillagd!\n");
             }
         //ändra status på befintlig ansökan
