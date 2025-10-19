@@ -45,3 +45,11 @@ class Program
         }
     }
 }
+//JobApplication ansökan = new JobApplication();
+
+//string summary = ansökan.GetSummary();
+//Console.WriteLine("Sammanfattning: " + summary);
+
+// Anropa GetDaysSinceApplied
+//int dagar = ansökan.GetDaysSinceApplied();
+//Console.WriteLine("Antal dagar sedan ansökan: " + dagar);

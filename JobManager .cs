@@ -17,7 +17,6 @@
             ansökan.PositionTitle = Console.ReadLine();
 
             Console.Write("Status (Applied, Interview, Offer, Rejected): ");
-            ansökan.Status = Console.ReadLine();
 
             Applications.Add(ansökan); // Lägg till i listan
             Console.WriteLine("Ansökan tillagd!\n");
