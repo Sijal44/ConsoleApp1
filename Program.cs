@@ -5,13 +5,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        JobManager job = new JobManager();
+        JobManager job = new JobManager(); // Skapar JobManager
         string val = "";
 
-        while (val != "6")
+        while (val != "5") // Loop tills användaren avslutar
         {
             Console.WriteLine("<< Welcome to Job Application Tracker >>");
-            Console.WriteLine("<< *************************************>>");
+            Console.WriteLine("<< ************************************* >>");
             Console.WriteLine("1. Lägg till ny ansökan");
             Console.WriteLine("2. Visa alla ansökningar");
             Console.WriteLine("3. Uppdatera status på en ansökan");
@@ -19,23 +19,21 @@ class Program
             Console.WriteLine("5. Avsluta programmet");
             Console.Write("Ditt val ===> ");
 
+            val = Console.ReadLine(); // Läs användarens val
 
-            val = Console.ReadLine();
-
-            switch (val)
+            switch (val) // Kör metod beroende på valet
             {
-              
                 case "1":
-                    job.AddJob();
+                    job.AddJob(); // Lägg till ansökan
                     break;
                 case "2":
-                    job.ShowAll();
+                    job.ShowAll(); // Visa alla ansökningar
                     break;
                 case "3":
-                    job.UpdateStatus();
+                    job.UpdateStatus(); // Uppdatera status
                     break;
                 case "4":
-                    job.RemoveJob();
+                    job.RemoveJob(); // Ta bort ansökan
                     break;
                 case "5":
                     Console.WriteLine("Programmet avslutas...");
