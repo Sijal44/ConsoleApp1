@@ -10,18 +10,21 @@ class Program
 
         while (val != "6")
         {
-            Console.WriteLine("\n<< Welcome to Job Application Tracker >>");
+            Console.WriteLine("<< Welcome to Job Application Tracker >>");
+            Console.WriteLine("<< *************************************>>");
             Console.WriteLine("1. Lägg till ny ansökan");
             Console.WriteLine("2. Visa alla ansökningar");
             Console.WriteLine("3. Uppdatera status på en ansökan");
             Console.WriteLine("4. Ta bort en ansökan");
             Console.WriteLine("5. Avsluta programmet");
-            Console.Write("Ditt val: ");
+            Console.Write("Ditt val ===> ");
+
 
             val = Console.ReadLine();
 
             switch (val)
             {
+              
                 case "1":
                     job.AddJob();
                     break;

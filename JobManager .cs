@@ -2,13 +2,13 @@
 {
     public class JobManager
     {
-        //Applications | List<JobApplication> - Samling av alla ansökningar
+        //skapa en lista som innehålla av alla ansökningar
         List<JobApplication> Applications = new List<JobApplication>();
 
         //Här ska vi skapa en metod som lägger till en ansökan
         public void AddJob()
         {
-            // 1️ Skapa ett nytt objekt (ett “papper”)
+            //  Skapa ett nytt objekt 
             JobApplication ansökan = new JobApplication();
 
             // 2️ Fyll i företagsnamn
@@ -19,20 +19,17 @@
             Console.Write("Tjänst: ");
             ansökan.PositionTitle = Console.ReadLine();
 
-            // 4️ Sätt ansökningsdatum till nu
-            ansökan.ApplicationDate = DateTime.Now;
-
             // 5️ Fyll i status
             Console.Write("Status (Applied, Interview, Offer, Rejected): ");
             ansökan.Status = Console.ReadLine();
 
-          
-            // 6Lägg objektet i listan
-            Applications.Add(ansökan);
 
-            // 97 Feedback till användaren
+            //stoppar objektet i listan.
+            Applications.Add(ansökan);
+            // Feedback till användaren
             Console.WriteLine("Ansökan tillagd!\n");
             }
+
         //ändra status på befintlig ansökan
         public void UpdateStatus()
         {
@@ -41,7 +38,7 @@
 
             var ansökan = Applications.FirstOrDefault(a => a.CompanyName == namn);
 
-            if (ansökan == null)
+            if (ansökan == null)//kolla om ett objekt finns
             {
                 Console.WriteLine("Ingen ansökan hittades med det företaget.");
                 return;
@@ -53,11 +50,10 @@
             ansökan.Status = nyStatus;
             Console.WriteLine("Status har uppdaterats!");
             }
-
         public void ShowAll()
         {
             ////Om listan är tom → visar bara ett kort meddeland
-            if (Applications.Count == 0)
+            if (Applications.Count == 0)//kollar om listan är tom
             {
                 Console.WriteLine("Inga ansökningar finns ännu.");
                 return;
@@ -76,8 +72,8 @@
                // Hitta ansökan med samma namn
                var ansökan = Applications.FirstOrDefault(a => a.CompanyName == namn);
 
-           if (ansökan != null)
-           {
+           if (ansökan != null)//Kolla om vi hittade något
+            {
                 Applications.Remove(ansökan);
                 Console.WriteLine("Ansökan borttagen!");
            }
@@ -89,10 +85,3 @@
     }
 }
 
-// public JobApplication(string companyName, string position, DateTime date, string status)
-//{
-// CompanyName = companyName;
-//PositionTitle = position;
-//ApplicationDate = date;
-// Status = status;
-//}

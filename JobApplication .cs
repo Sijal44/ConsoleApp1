@@ -9,15 +9,5 @@
         public DateTime ResponseDate ;
         public int SalaryExpectation ;
         
-        
-        public int GetDaysSinceApplied()
-        {
-            TimeSpan difference = DateTime.Now - ApplicationDate;
-            return difference.Days;
-        }
-        public string GetSummary()
-        {
-            return $"{CompanyName} - {PositionTitle} ({Status})";
-        }
     }
 }
