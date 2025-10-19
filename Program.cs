@@ -1,49 +1,46 @@
-﻿namespace ConsoleApp1
+﻿using ConsoleApp1;
+using System;
+
+class Program
 {
-    public class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        JobManager job = new JobManager(); // Skapar JobManager
+        string val = "";
+
+        while (val != "5") // Loop tills användaren avslutar
         {
-            //här skalpar jag objekt
-            JobManager job = new JobManager();
-            string val = "";
-        
-            while (val != "6")
+            Console.WriteLine("<< Welcome to Job Application Tracker >>");
+            Console.WriteLine("<< ************************************* >>");
+            Console.WriteLine("1. Lägg till ny ansökan");
+            Console.WriteLine("2. Visa alla ansökningar");
+            Console.WriteLine("3. Uppdatera status på en ansökan");
+            Console.WriteLine("4. Ta bort en ansökan");
+            Console.WriteLine("5. Avsluta programmet");
+            Console.Write("Ditt val ===> ");
+
+            val = Console.ReadLine(); // Läs användarens val
+
+            switch (val) // Kör metod beroende på valet
             {
-                Console.WriteLine("<< Välkommen till Job Application Tracker >>");
-                Console.WriteLine("<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>");
-                Console.WriteLine("1. Lägg till ny ansökan");
-                Console.WriteLine("2. Visa alla ansökningar");
-                Console.WriteLine("3. Uppdatera status på en ansökan");
-                Console.WriteLine("4. Ta bort en ansökan");
-                Console.WriteLine("5. Avsluta programmet");
-                Console.WriteLine("**************************************");
-                Console.Write("Ditt val: ");
-
-                val = Console.ReadLine();
-                Console.Clear();
-
-                switch (val)
-                {
-                    case "1":
-                        job.AddJob();
-                        break;
-                    case "2":
-                        job.ShowAll();
-                        break;
-                    case "3":
-                        job.UpdateStatus();
-                        break;
-                    case "4":
-                        job.RemoveJob();
-                        break;
-                    case "5":
-                        Console.WriteLine("Programmet avslutas...");
-                        break;
-                    default:
-                        Console.WriteLine("Ogiltigt val, försök igen.");
-                        break;
-                }
+                case "1":
+                    job.AddJob(); // Lägg till ansökan
+                    break;
+                case "2":
+                    job.ShowAll(); // Visa alla ansökningar
+                    break;
+                case "3":
+                    job.UpdateStatus(); // Uppdatera status
+                    break;
+                case "4":
+                    job.RemoveJob(); // Ta bort ansökan
+                    break;
+                case "5":
+                    Console.WriteLine("Programmet avslutas...");
+                    break;
+                default:
+                    Console.WriteLine("Ogiltigt val, försök igen.");
+                    break;
             }
         }
     }

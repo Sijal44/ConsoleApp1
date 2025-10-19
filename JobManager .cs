@@ -2,14 +2,13 @@
 {
     public class JobManager
     {
-        //Applications | List<JobApplication> - Samling av alla ansökningar
+        // Lista som innehåller alla ansökningar
         List<JobApplication> Applications = new List<JobApplication>();
 
-        //Här ska vi skapa en metod som lägger till en ansökan
+        // Lägg till ny ansökan
         public void AddJob()
         {
-            // 1️ Skapa ett nytt objekt (ett “papper”)
-            JobApplication ansökan = new JobApplication();
+            JobApplication ansökan = new JobApplication(); // Skapa nytt objekt
 
             Console.Write("Företagsnamn: ");
             ansökan.CompanyName = Console.ReadLine();
@@ -17,39 +16,37 @@
             Console.Write("Tjänst: ");
             ansökan.PositionTitle = Console.ReadLine();
 
-            ansökan.ApplicationDate = DateTime.Now;
             Console.Write("Status (Applied, Interview, Offer, Rejected): ");
 
-            ansökan.Status = Console.ReadLine();
-
-            Applications.Add(ansökan);
+            Applications.Add(ansökan); // Lägg till i listan
             Console.WriteLine("Ansökan tillagd!\n");
         }
-        //ändra status på befintlig ansökan
+
+        // Uppdatera status på befintlig ansökan
         public void UpdateStatus()
         {
             Console.Write("Ange företagsnamn att uppdatera: ");
             string namn = Console.ReadLine();
-            
-            var ansökan = Applications.FirstOrDefault(a => a.CompanyName == namn);
+
+            var ansökan = Applications.FirstOrDefault(a => a.CompanyName == namn); // LINQ söker
 
             if (ansökan == null)
             {
-                Console.WriteLine("Ingen ansökan hittades med det företaget.");
+                Console.WriteLine("Ingen ansökan hittades.");
                 return;
             }
 
             Console.Write("Ny status (Applied, Interview, Offer, Rejected): ");
             string nyStatus = Console.ReadLine();
 
-            ansökan.Status = nyStatus;
+            ansökan.Status = nyStatus; // Uppdaterar status
             Console.WriteLine("Status har uppdaterats!");
-            }
+        }
 
+        // Visa alla ansökningar
         public void ShowAll()
         {
-            ////Om listan är tom → visar bara ett kort meddeland
-            if (Applications.Count == 0)
+            if (Applications.Count == 0) // Kolla om listan är tom
             {
                 Console.WriteLine("Inga ansökningar finns ännu.");
                 return;
@@ -60,30 +57,24 @@
                 Console.WriteLine($"{ansökan.CompanyName} - {ansökan.PositionTitle} - {ansökan.Status}");
             }
         }
+
+        // Ta bort en ansökan
         public void RemoveJob()
         {
-                Console.Write("Ange företagsnamn att ta bort: ");
-                string namn = Console.ReadLine();
+            Console.Write("Ange företagsnamn att ta bort: ");
+            string namn = Console.ReadLine();
 
-               // Hitta ansökan med samma namn
-               var ansökan = Applications.FirstOrDefault(a => a.CompanyName == namn);
+            var ansökan = Applications.FirstOrDefault(a => a.CompanyName == namn); // LINQ söker
 
-           if (ansökan != null)
-           {
-                Applications.Remove(ansökan);
+            if (ansökan != null)
+            {
+                Applications.Remove(ansökan); // Tar bort ansökan
                 Console.WriteLine("Ansökan borttagen!");
-           }
-           else
-           {
+            }
+            else
+            {
                 Console.WriteLine("Ingen ansökan hittades.");
-           }
+            }
         }
     }
 }
-// public JobApplication(string companyName, string position, DateTime date, string status)
-//{
-// CompanyName = companyName;
-//PositionTitle = position;
-//ApplicationDate = date;
-// Status = status;
-//}
