@@ -2,11 +2,22 @@
 {
     public class JobApplication
     {
-        public string CompanyName;      // Företagsnamn
-        public string PositionTitle;    // Tjänst/Titel
-        public string Status;           // Status (Applied, Interview, Offer, Rejected)
-        public DateTime ApplicationDate; // Datum när ansökan skickades
-        public DateTime ResponseDate;   // Datum när svar mottogs
-        public int SalaryExpectation;   // Önskad lön
+        public string CompanyName;
+        public string PositionTitle;
+        public string Status ; //(Applied, Interview, Offer, Rejected)
+        public DateTime ApplicationDate; //| DateTime - Datum när ansökan skickades
+        public DateTime ResponseDate;
+        public int SalaryExpectation;
+        
+        
+       //// public int GetDaysSinceApplied()
+       // {
+       //     TimeSpan difference = DateTime.Now - ApplicationDate;
+       //     return difference.Days;
+       // }
+       // public string GetSummary()
+       // {
+       //     return $"{CompanyName} - {PositionTitle} ({Status})";
+       // }
     }
 }
